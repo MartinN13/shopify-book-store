@@ -4,27 +4,41 @@
   <meta charset="utf-8">
   <title>{{ page_title }} - {{ shop.name }}</title> 
   {{ content_for_header }}
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   {{ "style.css" | asset_url | stylesheet_tag }}
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   {{ "option_selection.js" | shopify_asset_url | script_tag }}
   {{ "shopify_common.js" | shopify_asset_url | script_tag }}
   {{ "customer_area.js"  | shopify_asset_url | script_tag }}
-  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }}
 </head>
 <body>
-  <div class="toolbar">
-    Toolbar here
-  </div>
-  <div class="container">
-    <div class="slider">
-      Slider here
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+          aria-expanded="false">
+            Browse Category<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <div class="content">
-      Content here
-      {{ content_for_layout}}
-    </div>
-    <footer>
-      Footer here
-    </footer> 
+  </nav>
+  <div class="content">
+    {{ content_for_layout}}
   </div>
+  <footer>
+    Footer here
+  </footer> 
 </body>
 </html>

@@ -1,13 +1,12 @@
-{% assign page = pages.frontpage %}
-<div class="home-page">
-  <h2>{{ page.title }}</h2>
-  {{ page.content }}
+<div class="slider">
+  Slider here
 </div>
 
-{% assign collection = collections.frontpage %}
-<div class="home-collections">
-  <h2>{{ collection.title }}</h2>
+<div class="container-fluid">
+  {% assign collection = collections.frontpage %}
+  <div class="books">
     {% for product in collection.products | limit:8 %}
       {% include 'product-loop' %}
     {% endfor %}
+  </div>
 </div>
