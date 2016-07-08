@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_title }} - {{ shop.name }}</title> 
+  {{ content_for_header }}
+  {{ "style.css" | asset_url | stylesheet_tag }}
+  {{ "option_selection.js" | shopify_asset_url | script_tag }}
+  {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+  {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }}
+</head>
+<body>
+  <div class="toolbar">
+    Toolbar here
+  </div>
+  <div class="container">
+    <div class="slider">
+      Slider here
+    </div>
+    <div class="content">
+      Content here
+      {{ content_for_layout}}
+    </div>
+    <footer>
+      Footer here
+    </footer> 
+  </div>
+</body>
+</html>
