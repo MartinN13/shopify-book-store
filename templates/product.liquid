@@ -1,1 +1,26 @@
-This is my product page!
+<div class="book col-lg-4 col-sm-6">
+  <div class="book-image">
+    <a href="{{ product.url | within: collection }}">
+      <img src="{{ product.featured_image.src | product_img_url: 'grande' }}"
+           alt="{{ product.featured_image.alt | escape }}" />
+    </a>
+  </div>
+  <div class="book-title">
+    <a href="{{ product.url | within: collection }}">
+      {{ product.title }}
+    </a>
+  </div>
+  <div class="book-price">
+    {{ product.price | money }}
+  </div>
+  <form action="/cart/add" method="post" class="product-form">
+    <div class="book-variants">
+      <select id="book-select" name="id">
+        {% for variant in product.variants %}
+        <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <input type="submit" name="add" value="Purchase" class="btn" />
+  </form>
+</div>

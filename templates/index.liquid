@@ -1,12 +1,12 @@
-<div class="slider">
-  Slider here
+<div class="book-genres">
+  {% if collections.size > 0 %}
+    {% include 'list-collections' %}
+  {% endif %}
 </div>
 
-<div class="container-fluid">
-  {% assign collection = collections.frontpage %}
-  <div class="books">
-    {% for product in collection.products | limit:8 %}
-      {% include 'product-loop' %}
-    {% endfor %}
-  </div>
+{% assign collection = collections.all %}
+<div class="books">
+  {% for product in collection.products | limit:8 %}
+    {% include 'product-loop' %}
+  {% endfor %}
 </div>

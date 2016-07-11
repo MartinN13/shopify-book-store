@@ -1,1 +1,9 @@
-This is my collection page!
+<div class="book-genres">
+  {% if collections.size > 0 %}
+    {% include 'list-collections' %}
+  {% endif %}
+</div>
+
+{% for product in collection.products %}
+  {% include 'product-loop' %}
+{% endfor %}

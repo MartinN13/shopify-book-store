@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-          aria-expanded="false">
+             aria-expanded="false">
             Browse Category<span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
@@ -31,14 +31,38 @@
             <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
+        <li class="cart-info">
+          <a href="/cart">Cart: {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}
+          ({{ cart.total_price | money }})</a>
+        </li>
+        {% for link in linklists.main-menu.links %}
+          <li {% if link.active %}class="current"{% endif %}>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+        <li class="search-form">
+          <form action="/search" method="get" class="search-form" role="search">
+            <p>
+              <input type="text" name="q" value="{{ search.terms | escape }}" />
+              <input type="submit" value="Search" class="btn" />
+            </p>
+          </form>
+        </li>
       </ul>
     </div>
   </nav>
-  <div class="content">
+  <div class="container-fluid">
     {{ content_for_layout}}
   </div>
   <footer>
     Footer here
+    <ul>
+      {% for link in linklists.footer.links %}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
   </footer> 
 </body>
 </html>
