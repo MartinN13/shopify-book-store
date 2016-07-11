@@ -6,9 +6,7 @@
     </a>
   </div>
   <div class="book-title">
-    <a href="{{ product.url | within: collection }}">
-      {{ product.title }}
-    </a>
+    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
   </div>
   <div class="book-price">
     {{ product.price | money }}

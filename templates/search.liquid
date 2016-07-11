@@ -1,1 +1,28 @@
-This is my search page!
+{% paginate search.results by 8 %}
+
+{% if search.performed %}    
+  {% if search.results_count == 0 %}  
+    <p>Your search for "{{ search.terms }}" did not yield any results.</p>              
+  {% else %}  
+    {% for item in search.results %}      
+      <div class="search-results">
+        <div class="book col-lg4 col-sm-6">
+          <div class="book-image">
+            <a href="{{ item.url }}">
+              <img src="{{ item.featured_image.src | product_img_url: 'medium'}}" 
+                   alt="{{ product.featured_image.alt | escape }}" />
+            </a>
+          </div>
+          <div class="book-title">
+            <a href="{{ item.url }}">{{ item.title }}</a>
+          </div>
+          <div class="book-price">
+            {{ item.price | money }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+{% endpaginate %}
