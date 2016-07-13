@@ -1,14 +1,16 @@
-<div class="book col-lg-4 col-sm-6">
-  <div class="book-image">
-    <a href="{{ product.url | within: collection }}">
-      <img src="{{ product.featured_image.src | product_img_url: 'medium' }}"
-           alt="{{ product.featured_image.alt | escape }}" />
-    </a>
-  </div>
-  <div class="book-title">
-    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-  </div>
-  <div class="book-price">
-    {{ product.price | money }}
+<div class="book-col col-lg-4 col-sm-6">
+  <div class="book">
+    <div class="book-image">
+      <a href="{{ product.url | within: collection }}">
+        <img class="book-cover" src="{{ product.featured_image.src | product_img_url: 'medium' }}"
+             alt="{{ product.featured_image.alt | escape }}" />
+      </a>
+    </div>
+    <div class="book-title">
+      <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+    </div>
+    <div class="book-price">
+      {{ product.price | money }}
+    </div>
   </div>
 </div>
