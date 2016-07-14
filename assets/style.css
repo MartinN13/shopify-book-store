@@ -1,6 +1,7 @@
 /* default tags */
 body {
   background-color: #f2f5f7;
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
 }
 
 /* navbar */
@@ -15,22 +16,40 @@ body {
 .navbar-nav > li > a {
    line-height: 48px;
 }
+.search-form {
+  padding-top: 26px;
+}
+.search-input {
+  border: none;
+}
 
 /* book genres */
-.book-genres {
+.popular-by-genre {
   margin-bottom: 80px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.book-genre-title {
+  display: inline-block;
+}
+.book-genres {
+  display: inline-block;
 }
 
 /* book grid */
 .book-col {
   padding-right: 25px;
   padding-left: 25px;
-  padding-bottom: 86px;
+  margin-bottom: 86px;
+  height: 260px;
 }
 .book {
   background-color: white;
   border: 1px solid #eaedef;
-  border-radius: 4px;
+  border-radius: 6px;
+  margin-bottom: 86px;
+  height: 260px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
 .book-image {
   width: 140px;
@@ -39,20 +58,33 @@ body {
   position: relative;
   box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
 }
+.book-info {
+  position: absolute;
+  top: 32px;
+  left: 214px;
+  width: calc(100% - 50px - 214px);
+}
 .book-cover {
   height: 226px;
   width: 140px;
 }
 .book-title {
+  margin-bottom: 4px;
+}
+.book-title > a {
+  color: #3a4753;
   font-size: 16px;
-  display: inline-block;
-  position: relative;
-  top: -200px;
-  left: 180px;
+  font-weight: 400;
 }
 .book-price {
-  display: inline-block;
-  position: relative;
-  top: -200px;
-  left: 180px;
+  margin-bottom: 46px;
+  color: #929292;
+  font-size: 12px;
+  font-weight: 300;
+}
+.book-description {
+  height: 60px;
+  overflow: hidden;
+  color: #9ca9b4;
+  font-weight: 300;
 }

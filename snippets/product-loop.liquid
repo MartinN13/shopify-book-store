@@ -6,11 +6,16 @@
              alt="{{ product.featured_image.alt | escape }}" />
       </a>
     </div>
-    <div class="book-title">
-      <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-    </div>
-    <div class="book-price">
-      {{ product.price | money }}
+    <div class="book-info">
+      <div class="book-title">
+        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+      </div>
+      <div class="book-price">
+        {{ product.price | money }}
+      </div>
+      <div class="book-description">
+        {{ product.description }}
+      </div>
     </div>
   </div>
 </div>
