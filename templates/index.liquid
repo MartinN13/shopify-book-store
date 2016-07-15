@@ -5,7 +5,7 @@
 </div>
 
 {% assign collection = collections.all %}
-<div class="books">
+<div class="row">
   {% for product in collection.products | limit:8 %}
     {% include 'product-loop' %}
   {% endfor %}

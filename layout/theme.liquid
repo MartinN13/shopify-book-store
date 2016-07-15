@@ -2,55 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ page_title }} - {{ shop.name }}</title> 
   {{ content_for_header }}
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  {{ "main.js" | asset_url | script_tag }}
-  {{ "option_selection.js" | shopify_asset_url | script_tag }}
-  {{ "shopify_common.js" | shopify_asset_url | script_tag }}
-  {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
   {{ "style.css" | asset_url | stylesheet_tag }}
 </head>
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
+  <nav class="navbar">
       <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-             aria-expanded="false">
-            Browse Category<span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href"#">Browse Category</a>
         </li>
         {% for link in linklists.main-menu.links %}
-          <li {% if link.active %}class="current"{% endif %}>
-            <a href="{{ link.url }}">{{ link.title }}</a>
+          <li class="nav-item" {% if link.active %} class="nav-item current" {% endif %}>
+            <a class="nav-link" href="{{ link.url }}">{{ link.title }}</a>
           </li>
         {% endfor %}
-        <li class="search">
-          <form action="/search" method="get" class="search-form" role="search">
-            <p>
-              <input type="submit" value="Search" class="btn btn-secondary btn-sm" />
-              <input type="text" name="q" value="Search Book" class="search-input" />
-            </p>
+          <form action="/search" method="get" role="search" class="form-inline nav-item">
+            <input type="text" name="q" value="Search Book" class="form-control" />
           </form>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="cart-info">
-          <a href="/cart">Cart: {{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}
-          ({{ cart.total_price | money }})</a>
+        <li class="nav-item pull-xs-right">
+          <a class="nav-link" href="/cart">Cart: {{ cart.item_count }} 
+            {{ cart.item_count | pluralize: 'item', 'items' }}
+            ({{ cart.total_price | money }})
+          </a>
         </li>
       </ul>
     </div>
@@ -67,6 +44,12 @@
         </li>
       {% endfor %}
     </ul>
-  </footer> 
+  </footer>
+  {{ "option_selection.js" | shopify_asset_url | script_tag }}
+  {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+  {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  {{ "main.js" | asset_url | script_tag }}
 </body>
 </html>

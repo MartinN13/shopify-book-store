@@ -4,30 +4,20 @@ body {
   font-family: -apple-system, Helvetica, Arial, sans-serif;
 }
 
-/* navbar */
+/* navbar elements */
 .navbar {
-  height: 78px;
   background-color: white;
   border: 0;
   border-radius: 0;
-  padding-left: 20px;
-  padding-right: 20px;
 }
-.navbar-nav > li > a {
-   line-height: 48px;
-}
-.search-form {
-  padding-top: 26px;
-}
-.search-input {
-  border: none;
+.form-control {
+  border: 0;
+  margin: 0;
 }
 
 /* book genres */
 .popular-by-genre {
   margin-bottom: 80px;
-  padding-left: 25px;
-  padding-right: 25px;
 }
 .book-genre-title {
   display: inline-block;
@@ -37,46 +27,6 @@ body {
 }
 
 /* book grid */
-.book-col {
-  padding-right: 25px;
-  padding-left: 25px;
-  margin-bottom: 86px;
-}
-.book {
-  background-color: white;
-  border: 1px solid #eaedef;
-  border-radius: 6px;
-  margin-bottom: 86px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-}
-.book-image {
-  top: -36px;
-  position: relative;
-}
-.book-info {
-  position: absolute;
-  top: 32px;
-}
-.book-cover {
-  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
-}
-.book-title {
-  margin-bottom: 4px;
-}
-.book-title > a {
-  color: #3a4753;
-  font-size: 16px;
-  font-weight: 400;
-}
-.book-price {
-  margin-bottom: 46px;
-  color: #929292;
-  font-size: 12px;
-  font-weight: 300;
-}
-.book-description {
-  height: 60px;
-  overflow: hidden;
-  color: #9ca9b4;
-  font-weight: 300;
+.card-img-top {
+  width: 100%;
 }
