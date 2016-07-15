@@ -41,32 +41,24 @@ body {
   padding-right: 25px;
   padding-left: 25px;
   margin-bottom: 86px;
-  height: 260px;
 }
 .book {
   background-color: white;
   border: 1px solid #eaedef;
   border-radius: 6px;
   margin-bottom: 86px;
-  height: 260px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
 .book-image {
-  width: 140px;
   top: -36px;
-  left: 20px;
   position: relative;
-  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
 }
 .book-info {
   position: absolute;
   top: 32px;
-  left: 214px;
-  width: calc(100% - 50px - 214px);
 }
 .book-cover {
-  height: 226px;
-  width: 140px;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
 }
 .book-title {
   margin-bottom: 4px;
