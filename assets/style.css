@@ -3,6 +3,19 @@ body {
   background-color: #f2f5f7;
   font-family: -apple-system, Helvetica, Arial, sans-serif;
 }
+h2 {
+  color: #4a5660;
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 17px;
+}
+
+/* custom elements */
+.separator {
+  margin-top: 8px;
+  height: 1px;
+  background-color: #e6eaed;
+}
 
 /* navbar elements */
 .navbar {
@@ -10,23 +23,54 @@ body {
   border: 0;
   border-radius: 0;
 }
+.search-icon {
+  line-height: 36px;
+  color: #858e97;
+}
 .form-control {
   border: 0;
   margin: 0;
+  padding-left: 0;
+  color: #cacdd0;
+  font-size: 14px;
+  line-height: 26px;
+}
+.form-control:focus {
+  color: inherit;
 }
 
 /* book genres */
 .popular-by-genre {
-  margin-bottom: 80px;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 .book-genre-title {
   display: inline-block;
 }
 .book-genres {
   display: inline-block;
+  margin-top: 5px;
+}
+.book-genres > a {
+  color: #3a4753;
+  font-weight: 300;
+  margin-left: 40px;
+}
+.book-genres > a:hover {
+  color: #000006;
+}
+.active {
+  font-weight: bold !important;
+  border-bottom: 2px #56d0e9 solid;
+  padding-bottom: 23px;
 }
 
 /* book grid */
 .card-img-top {
   width: 100%;
+}
+.card-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

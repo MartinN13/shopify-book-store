@@ -1,14 +1,15 @@
 {% if collections.size > 0 %}
-  <h2 class="book-genre-title">Genres</h2>
-  <div class="book-genres">
+  <h2 class="book-genre-title">Popular by Genre</h2>
+  <div class="book-genres pull-xs-right">
     {% for collection in collections %}
-        {% if collection.title == 'All' %}
-          <a href="{{ shop.url}}">{{ collection.title }}</a>
-        {% else %}
-          <a href="{{ collection.url}}">{{ collection.title }}</a>
-        {% endif %}
+      {% if collection.title == 'All genres' %}
+        <a href="{{ shop.url}}" class="book-genre">{{ collection.title }}</a>
+      {% else %}
+        <a href="{{ collection.url}}" class="book-genre">{{ collection.title }}</a>
+      {% endif %}
     {% endfor %}
   </div>
+  <div class="separator"></div>
 {% else %}
   <p>No genres (collections) exist!</p>
 {% endif %}
