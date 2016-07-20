@@ -10,17 +10,14 @@
       {{ product.title }}
     </a>
   </div>
-  <div class="book-price">
-    {{ product.price | money }}
-  </div>
   <form action="/cart/add" method="post" class="product-form">
     <div class="book-variants">
-      <select id="book-select" name="id">
+      <select name="id">
         {% for variant in product.variants %}
-        <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+        <option value="{{ variant.id }}">{{ variant.price | money }}</option>
         {% endfor %}
       </select>
     </div>
-    <input type="submit" name="add" value="Purchase" class="btn" />
+    <input type="submit" name="add" value="Buy" class="btn btn-primary" />
   </form>
 </div>

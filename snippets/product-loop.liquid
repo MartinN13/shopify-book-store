@@ -8,9 +8,16 @@
       <div class="card-title">
         <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
       </div>
-      <div class="card-subtitle">
-        {{ product.price | money }}
-      </div>
+      <form action="/cart/add" method="post" class="product-form">
+        <div class="book-variants">
+          <select name="id">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.price | money }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <input type="submit" name="add" value="Buy" class="btn btn-primary" />
+      </form>
     </div>
   </div>
 </div>
