@@ -48,14 +48,31 @@
     {{ content_for_layout}}
   </div>
   <footer>
-    Footer here
-    <ul>
-      {% for link in linklists.footer.links %}
-        <li>
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+    <div class="container text-xs-center">
+    {% for link in linklists.footer.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+      {% if forloop.last == false %}
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+      {% endif %}
+    {% endfor %}
+    </div>
+    <div class="social text-xs-center">
+      {% if settings.facebook_show %}
+        <a href="{{ settings.facebook_link }}">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+      {% if settings.twitter_show %}
+        <a href="{{ settings.twitter_link }}">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+      {% if settings.pinterest_show %}
+        <a href="{{ settings.pinterest_link }}">
+          <i class="fa fa-pinterest" aria-hidden="true"></i>
+        </a>
+      {% endif %}
+    </div>
   </footer>
   {{ "option_selection.js" | shopify_asset_url | script_tag }}
   {{ "shopify_common.js" | shopify_asset_url | script_tag }}

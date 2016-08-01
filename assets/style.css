@@ -3,6 +3,12 @@ body {
   background-color: #f2f5f7;
   font-family: -apple-system, Helvetica, Arial, sans-serif;
 }
+footer {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background: linear-gradient(#f2f5f7, #e4e6e9);
+  font-size: 1rem;
+}
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -100,4 +106,13 @@ h2 {
 }
 .menu-dropdown {
   left: -100px;
+}
+
+/* footer elements */
+.social {
+  font-size: 2rem;
+}
+.social > a {
+  padding-left: 5px;
+  padding-right: 5px;
 }

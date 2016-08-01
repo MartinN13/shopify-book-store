@@ -1,10 +1,39 @@
 [
   {
-    "name": "Welcome",
+    "name": "Footer Settings",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "Theme Settings will go here."
+        "type": "checkbox",
+        "id": "facebook_show",
+        "label": "Show Facebook Icon",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "facebook_link",
+        "label": "Facebook Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "twitter_show",
+        "label": "Show Twitter Icon",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "twitter_link",
+        "label": "Twitter Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "pinterest_show",
+        "label": "Show Pinterest Icon",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "pinterest_link",
+        "label": "Pinterest Link"
       }
     ]
   }
