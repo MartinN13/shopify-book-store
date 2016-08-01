@@ -12,4 +12,8 @@ $(document).ready(function() {
       jQuery(this).addClass("active");
     }
   });
+
+  if ($(document.body).height() < $(window).height()) {
+    $("footer").addClass("navbar-fixed-bottom");
+  }
 });

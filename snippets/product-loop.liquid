@@ -9,14 +9,14 @@
         <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
       </div>
       <form action="/cart/add" method="post" class="product-form">
-        <div class="book-variants">
+        <div class="price">
           <select name="id">
             {% for variant in product.variants %}
               <option value="{{ variant.id }}">{{ variant.price | money }}</option>
             {% endfor %}
           </select>
         </div>
-        <input type="submit" name="add" value="Buy" class="btn btn-primary" />
+        <input type="submit" name="add" value="Buy" class="btn btn-sm btn-primary" />
       </form>
     </div>
   </div>

@@ -1,23 +1,24 @@
-<div class="book col-lg-4 col-sm-6">
-  <div class="book-image">
-    <a href="{{ product.url | within: collection }}">
-      <img src="{{ product.featured_image.src | product_img_url: 'grande' }}"
-           alt="{{ product.featured_image.alt | escape }}" />
-    </a>
-  </div>
-  <div class="book-title">
-    <a href="{{ product.url | within: collection }}">
-      {{ product.title }}
-    </a>
-  </div>
-  <form action="/cart/add" method="post" class="product-form">
-    <div class="book-variants">
-      <select name="id">
-        {% for variant in product.variants %}
-        <option value="{{ variant.id }}">{{ variant.price | money }}</option>
-        {% endfor %}
-      </select>
+<div class="card">
+  <a href="{{ product.url | within: collection }}">
+    <img class="card-img-product" src="{{ product.featured_image.src | product_img_url: 'grande' }}"
+         alt="{{ product.featured_image.alt | escape }}" />
+  </a>
+  <div class="card-block card-block-product">
+    <div class="card-title">
+      <a href="{{ product.url | within: collection }}">
+        {{ product.title }}
+      </a>
     </div>
-    <input type="submit" name="add" value="Buy" class="btn btn-primary" />
-  </form>
+    <p>{{ product.description }}</p>
+    <form action="/cart/add" method="post" class="product-form">
+      <input type="submit" name="add" value="Buy" class="btn btn-primary" />
+      <div class="price-product">
+        <select name="id">
+          {% for variant in product.variants %}
+          <option value="{{ variant.id }}">{{ variant.price | money }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </form>
+  </div>
 </div>
