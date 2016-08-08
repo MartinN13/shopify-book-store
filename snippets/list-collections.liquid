@@ -4,6 +4,7 @@
     {% for collection in collections %}
       {% if collection.title == 'All genres' %}
         <a href="{{ shop.url}}" class="book-genre">{{ collection.title }}</a>
+      {% elsif collection.title == 'banner' %}
       {% else %}
         <a href="{{ collection.url}}" class="book-genre">{{ collection.title }}</a>
       {% endif %}

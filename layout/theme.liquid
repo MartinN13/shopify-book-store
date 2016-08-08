@@ -46,9 +46,46 @@
     </div>
   </nav>
   <div class="owl-carousel">
-    <div class="left-banner"></div>
-    <div class="center-banner"></div>
-    <div class="right-banner"></div>
+    {% for product in collections.banner.products %}
+      {% if forloop.first == true %}
+        <div class="left-banner">
+          <a href="{{ product.url | within: collection }}">
+            <img id="banner-image" src="{{ product.featured_image.src | product_img_url: 'grande' }}"
+                 alt="{{ product.featured_image.alt | escape }}" />
+          </a>
+          <div class="banner-title">{{ product.title }}</div>
+          <div class="banner-description">{{ product.description }}</div>
+          <a href="{{ product.url | within: collection }}">
+            <div class="banner-button">See The Book</div>
+          </a>
+        </div>
+      {% elsif forloop.last == true %}
+        <div class="right-banner">
+          <a href="{{ product.url | within: collection }}">
+            <img id="banner-image" src="{{ product.featured_image.src | product_img_url: 'grande' }}"
+                 alt="{{ product.featured_image.alt | escape }}" />
+          </a>
+          <div class="banner-title">{{ product.title }}</div>
+          <div class="banner-description">{{ product.description }}</div>
+          <a href="{{ product.url | within: collection }}">
+            <div class="banner-button">See The Book</div>
+          </a>
+        </div>
+      {% else %}
+        <div class="center-banner">
+          <a href="{{ product.url | within: collection }}">
+            <img id="banner-image" src="{{ product.featured_image.src | product_img_url: 'grande' }}"
+                 alt="{{ product.featured_image.alt | escape }}" />
+          </a>
+          <div class="banner-title">{{ product.title }}</div>
+          <div class="banner-description">{{ product.description }}</div>
+          <a href="{{ product.url | within: collection }}">
+            <div class="banner-button">See The Book</div>
+          </a>
+        </div>
+      {% endif ‰}
+    {% endfor %}
+    {% endfor %}
   </div>
   <div class="container-fluid">
     {{ content_for_layout}}
